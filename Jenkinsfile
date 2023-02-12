@@ -10,7 +10,7 @@ pipeline{
         }
         stage("build docker image"){
             steps{
-                sh "docker ps"
+                sh "docker build -t serge ."
             }
         }
 
