@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    environment{
+        DOCKERHUB=credentials("dockerhub")
+    }
     stages {
         stage ("build"){
 
@@ -15,7 +18,7 @@ pipeline{
         }
         stage("login to docker"){
             steps{
-                sh 'echo dckr_pat_uoj3q_epmVruUblgnoKYSQo1emI | docker login -u djoum1983 --password-stdin '
+                sh 'echo $DOCKERHUB_PSW | docker login -u $DOCKERHUB_USR --password-stdin '
             }
         }
         stage("push image in docker"){
