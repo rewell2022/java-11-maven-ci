@@ -10,9 +10,15 @@ pipeline{
         }
         stage("build docker image"){
             steps{
-                sh "docker build -t serge ."
+                sh "docker build -t djoum1983/serge ."
             }
         }
+        stage("login to docker"){
+            steps{
+                sh 'echo dckr_pat_uoj3q_epmVruUblgnoKYSQo1emI | docker login -u djoum1983 --password-stdin '
+            }
+        }
+
 
     }
 }
