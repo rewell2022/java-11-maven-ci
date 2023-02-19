@@ -24,6 +24,11 @@ pipeline{
                 sh 'echo dckr_pat_8Dt6Lv5XBdi4OMw_UxhbdiFs0JQ | docker login -u djoum1983 --password-stdin '
             }
     }
+    stage("docker push image"){
+        steps{
+        sh  "docker push djoum1983/nana"
+        }
+    }
 }
    
 }
