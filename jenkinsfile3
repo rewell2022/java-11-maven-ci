@@ -1,0 +1,16 @@
+pipeline{
+    agent any
+}
+stages{
+    stage ("create_artifact"){
+        steps{
+             sh './mvnw clean package -DskipTests'
+        }
+        
+   
+    }
+}
+   
+
+
+
