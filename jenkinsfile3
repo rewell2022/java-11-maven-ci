@@ -5,8 +5,19 @@ pipeline{
         steps{
              sh './mvnw clean package -DskipTests'
         }
+
         
    
+    }
+    stage{
+        build("docker image"){
+            steps{
+                sh "docker build -t djoum1983/serge ."
+            }
+
+            
+
+        }
     }
 }
    
