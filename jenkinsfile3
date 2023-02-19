@@ -21,7 +21,7 @@ pipeline{
     stage("login to docker"){
     
             steps{
-                sh  sh 'echo dckr_pat_8Dt6Lv5XBdi4OMw_UxhbdiFs0JQ | docker login -u djoum1983 --password-stdin '
+                sh 'echo dckr_pat_8Dt6Lv5XBdi4OMw_UxhbdiFs0JQ | docker login -u djoum1983 --password-stdin '
             }
     }
 }
