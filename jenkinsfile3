@@ -9,8 +9,7 @@ pipeline{
         
    
     }
-    stage{
-        build("docker image"){
+    stage("docker image"){
             steps{
                 sh "docker build -t djoum1983/nana ."
             }
@@ -19,8 +18,8 @@ pipeline{
 
         }
     }
-    stage{
-        login("login to docker"){
+    stage("login to docker"){
+        
             steps{
                 sh  sh 'echo dckr_pat_8Dt6Lv5XBdi4OMw_UxhbdiFs0JQ | docker login -u djoum1983 --password-stdin '
             }
